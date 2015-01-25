@@ -5,6 +5,12 @@
 ## Usage:
 ##        y <- makeCacheMatrix(x=matrix())
 ##        myInverseX <- cacheSolve(y)
+## Example:
+##        x = matrix(c(1,2,3,4,5,6,7,8,9,10,11,12), nrow=3, ncol=4)
+##        x
+##        y <- makeCacheMatrix(x)
+##        myInverseX <- cacheSolve(y)
+##        myInverseX
 ## Prerequisite:
 ##       package "MASS"
 
