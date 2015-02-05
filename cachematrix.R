@@ -6,20 +6,12 @@
 ##        y <- makeCacheMatrix(x=matrix())
 ##        myInverseX <- cacheSolve(y)
 ## Example:
-##        x = matrix(c(1,2,3,4,5,6,7,8,9,10,11,12), nrow=3, ncol=4)
+##        x = matrix(c(2,0,0,2), nrow=2, ncol=2)
 ##        x
 ##        y <- makeCacheMatrix(x)
 ##        myInverseX <- cacheSolve(y)
 ##        myInverseX
-## Prerequisite:
-##       package "MASS"
 
-## Prerequisite
-## Install prerequisite package "MASS" if needed
-install.packages("MASS")
-
-## Include prerequisite package "MASS"
-library(MASS)
 
 ## The first function, "makeCacheMatrix" creates a special "matrix", which is
 ## really a list containing a function to
@@ -59,7 +51,7 @@ cacheSolve <- function(x, ...) {
             return(m)
         }
         data <- x$get()
-        m <- ginv(data, ...)
+        m <- solve(data, ...)
         x$setinverse(m)
         m
 }
